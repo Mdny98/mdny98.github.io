@@ -2073,7 +2073,7 @@ input, select, textarea {
 				border-radius: 0.35em;
 				border: solid 3px rgba(255, 255, 255, 0.5);
 				color: #fff;
-				content: 'View';
+				content: 'link';
 				display: inline-block;
 				font-size: 0.8em;
 				font-weight: 400;
@@ -2134,17 +2134,22 @@ input, select, textarea {
 			}
 
 		.image.avatar {
+			
 			border-radius: 100%;
+			/* display: block; */
 		}
-
-			.image.avatar:before {
-				display: none;
-			}
-
-			.image.avatar img {
-				border-radius: 100%;
-				width: 100%;
-			}
+		
+		.image.avatar:before {
+			display: none;
+		}
+		
+		.image.avatar img {
+			
+			border-radius: 100%;
+			width: 250px;
+			height: 250px;
+			object-fit: cover;			
+					}
 
 /* List */
 
@@ -2639,8 +2644,13 @@ input, select, textarea {
 		}
 
 		#header .image.avatar {
+			/* margin: 0 0 1em 0; */
+			/* width: 6.25em; */
 			margin: 0 0 1em 0;
-			width: 6.25em;
+			/* width: 12em;          Increase size of container (≈144px) */
+			/* height: 12em;         Set height to match for a circle */
+			overflow: hidden;    /* Prevent image overflow */
+			border-radius: 100%;  
 		}
 
 /* Footer */
@@ -3078,7 +3088,7 @@ input, select, textarea {
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+				background-image: url("images/overlay.png"), url("/images/bg.jpg");
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;
